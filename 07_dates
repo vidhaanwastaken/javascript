@@ -1,0 +1,19 @@
+let mydate = new Date()
+
+
+// console.log(mydate.toString());
+// console.log(mydate.toDateString());
+// console.log(mydate.toLocaleString());// diff ways to get date printed
+// console.log(typeof mydate);//date is a type of object
+
+
+let mydate2 = new Date(2008,1,7, 4 ,6 ,23)
+// console.log(mydate2.toDateString());
+
+// console.log(mydate2.toLocaleString());
+
+//different ways to print date and time
+
+
+
+
