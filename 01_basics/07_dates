@@ -14,6 +14,13 @@ let mydate2 = new Date(2008,1,7, 4 ,6 ,23)
 
 //different ways to print date and time
 
+let timestamp = Date.now()
+console.log(timestamp);
+console.log(mydate2.getTime());
+
+
+
+
 
 
 
