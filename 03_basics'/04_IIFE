@@ -1,6 +1,0 @@
-(function dataConnect(times){
-    console.log(`database is connected ${times} times`);
-    
-})(2);
-//IIFE prevents from global scope pollution
-// put a semicondtor in the end when using IIFE for arrow functions
