@@ -8,7 +8,9 @@ const startTime = Date.now()
 let freeWaitTimeEnd = false
 let rideStarted = false
 let rideEnded = false;
-
+let currTime
+let totalFees = 0
+let timeRideStart
 
 
 
@@ -20,17 +22,27 @@ console.log("the driver has arrived");
 setTimeout(() => checkTime(startTime), 1000);
 
 function checkTime(startTime){
+ currTime = (Date.now()-startTime)/1000
 
-    if(!freeWaitTimeEnd && (Date.now()-startTime)/1000>=3){
+    if(!freeWaitTimeEnd && currTime>=3){
         console.log("free wait time has ended");
+    
+        
             freeWaitTimeEnd=true
     }
-     if(!rideStarted && (Date.now()-startTime)/1000>=5 ){
+    
+     if(!rideStarted && currTime>=5 ){
+        
     console.log("the ride has started");
+    let lateFees = (Math.floor(currTime-3)*5)
+    console.log(`late fees is: ${lateFees}`);
+    totalFees = lateFees
     rideStarted = true
     }
-     if(!rideEnded && (Date.now()-startTime)/1000>=12){
+     if(!rideEnded && currTime>=12){
+        totalFees = Math.floor(currTime-7)*10 + totalFees
     console.log("the ride has ended");
+    console.log(`total fees is: ${totalFees}`);
     rideEnded = true
     }
     
